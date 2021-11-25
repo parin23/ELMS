@@ -22,5 +22,7 @@ urlpatterns = [
     path('', views.homeView),
     path('Student',views.showSt),
     path('Teacher',views.showTeach),
+    path('Courses',views.showCourseName),
+    path('ResultAll',views.showResultAll),
     
 ]

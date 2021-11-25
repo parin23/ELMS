@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from mysite.models import stModel,teachModel
+from mysite.models import *
 
 def lister(obj):# Converts the Class into a List i.e makes the table iterable as List
     obj1 = []
@@ -22,5 +22,18 @@ def showSt (request):
 def showTeach (request):
     showAll = teachModel.objects.all()
     colName = ["Teacher Id","Teacher Name"]
+    final = lister(showAll)
+    return render(request,'index.html',{"data":final,"cols":colName})
+
+def showCourseName (request):
+    showAll = cnameModel.objects.all()
+    colName = ["Course Id","Course Name"]
+    final = lister(showAll)
+    return render(request,'index.html',{"data":final,"cols":colName})
+
+
+def showResultAll (request):
+    showAll = resultModel.objects.all()
+    colName = ["Result Id","Test ID","Course ID","Student ID","Score","Result Date","CPI"]
     final = lister(showAll)
     return render(request,'index.html',{"data":final,"cols":colName})
