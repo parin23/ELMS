@@ -24,5 +24,5 @@ urlpatterns = [
     path('Teacher',views.showTeach),
     path('Courses',views.showCourseName),
     path('ResultAll',views.showResultAll),
-    
+    path('Student_add',views.insertSt,name='Add Student'),    
 ]

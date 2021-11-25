@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Result</title>
+</head>
+<body>
+    
+    <h1> Check Result </h1>
+    <div> Use This Page to Find your Result</div>>
+
+    <form method="POST" >
+        {% csrf_token %}  
+        <div> Enter Your Roll No :<input name="st_id" type="number" /></div>
+    </form>
+        
+</body>
+</html>
