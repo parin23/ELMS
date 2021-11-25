@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <title>Home with PGsql</title>
 </head>
 <body>
-    <center>
-        <a href='/Teacher'>Teachers</a>
-        <a href='/Student'>Student</a>
-        <a href='/Courses'>Courses</a>
-        <a href='/ResultAll'>Result All</a>
-        <a href='/'>Back</a>
-        <h1>The Tables</h1>
-        <table border="1">
+    <div class="Content">
+        <h1 style="font-style: italic; color: antiquewhite;">The Tables</h1>
+        <div> Click on the required button</div>
+        <a class="pure-button pure-button-active" href='/Teacher'>Teachers</a>
+        <a class="pure-button pure-button-primary" href='/Student'>Student</a>
+        <a class="pure-button pure-button-active" href='/Courses'>Courses</a>
+        <a class="pure-button pure-button-primary" href='/ResultAll'>Result All</a>
+        <a class="pure-button pure-button-active" href='/'>Back</a>
+        
+        <table class="pure-table-striped">
+            <thead>
             <tr>
                 {% for col in cols %}
                 <th>{{col}}</th>
                 {% endfor %}
                 
             </tr>
+        </thead>
                 {% for result in data %}
                 <tr>
                     {% for val in result %}
@@ -30,6 +37,6 @@
                 </tr>
                 {% endfor %}
         </table>
-    </center>
+    </div>
 </body>
 </html>
